@@ -1,0 +1,6 @@
+@use './variables' as *;
+@import './modal';
+
+body {
+    background-color: $backgroundColor !important;
+}
