@@ -1,6 +1,15 @@
 @use './variables' as *;
 @import './modal';
+@import './navbar';
 
 body {
     background-color: $backgroundColor !important;
+}
+
+.hide {
+    display: none !important
+}
+
+.show {
+    display: flex
 }

@@ -12,12 +12,12 @@ class ModalDialog extends Component{
     }
 
     handleCancel(){ 
-        this.props.handleClose();
+        this.props.onCancel();
     }
 
     render() {
         return(
-            <div className={ `${this.props.modalDisplayClass} overlay` }>
+            <div className={ `${this.props.modalDisplayClass} overlay` } onClick={this.handleCancel}>
                 <div className="modalDialog p-2">
                     Are you sure you want to remove a To Do?
                     <div className="d-flex justify-content-evenly">

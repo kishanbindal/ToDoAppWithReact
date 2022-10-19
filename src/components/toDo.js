@@ -13,6 +13,7 @@ import ModalDialog from "./modal";
 // }
 
 class ToDo extends Component{
+    
 
     constructor(props){
         super(props)
@@ -25,8 +26,7 @@ class ToDo extends Component{
         this.toggleModal = this.toggleModal.bind(this)
     }
 
-
-    async toggleModal(){
+    toggleModal(){
         this.setState({modalActive : this.state.modalActive === false ? true : false});
         this.modalDisplayClass = this.state.modalActive === false ? "show" : "hide"
     }
@@ -39,11 +39,12 @@ class ToDo extends Component{
                         <h3>{ this.props.title }</h3>
                     </div>
                     <div className="col-md-12 p-2">
+                        <button className="btn btn-success">Completed</button>
                         <button className="btn btn-danger" onClick={this.toggleModal}>Delete</button>
                     </div>
                 </div>
                 <ModalDialog openModal={this.state.modalActive}
-                    handleClose = {this.toggleModal}
+                    onCancel = {this.toggleModal}
                     modalDisplayClass={this.modalDisplayClass}/>
             </div>
         )
